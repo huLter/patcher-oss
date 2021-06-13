@@ -32,4 +32,9 @@ jobs:
     - name: Test
       run: |
         wget -q https://raw.githubusercontent.com/AndroidDump/xiaomi_olivelite_dump/olivelite-user-10-QKQ1.191014.001-V11.0.2.0.QCPINXM-release-keys/boot.img
-        python ./main.py boot.img
+        python ./main.py boot.img  
+    - uses: actions/download-artifact@v2
+      with:
+        name: Test
+    - name: Display structure of downloaded files
+      run: ls -R
